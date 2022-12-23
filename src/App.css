@@ -1,38 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
 .App {
   text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  background-image: url("back2.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form{
+  background-color: rgb(245, 245, 245);
   display: flex;
   flex-direction: column;
+  justify-content:flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height:100%;
+  width: 40%;
+  border-radius: 20px 0px 0px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.list{
+  width: 90%;
+  height: 100%;
+  margin: 0px 10% 2% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: auto;
+  overflow-x: hidden;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-container{
+  background-color: blueviolet;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(150px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+}
+
+.todos{
+  margin: 4% 2% 2% 2%;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  border-radius: 2%;
+  width: 90%;
+  text-align: start;
+  padding: 1% 2%;
+  background-color: rgba(245, 245, 245, 0.505);
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 10vh;
+  font-family: 'Dosis', sans-serif;
+  font-weight:lighter;
+  margin: 5% 10% 20% 10%;
+}
+
+.head {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.inputT {
+  width: 70%;
+  height: 5%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(150px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1% 0px 5% 0px;
+}
+
+.date{
+  
+  margin:5px 0px 0px 0px;
+  width: 70%;
+}
+
+.task {
+  margin:5px 0px 0px 0px;
+}
+
+
+h4{
+  
+  margin: 2px 0px 5px 0px;
+  font-weight: 300;
+}
+
+.btn-1 {
+  background-color:#91878a87;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(150px);
+  border: 3px solid rgb(246, 240, 250);
+  border-radius: 10%;
+  width: 20%;
+  height: 8%;
+  margin: 5%;
+  font-weight: 700;
+}
+
+.btn-1:hover {
+  cursor: pointer;
+}
+
+.day{
+  font-size: 300%;
+}
+
+.checkbox{
+  width: 15px;
+  align-self: flex-start;
+  margin: 2%;
+}
+
+.item{
+  overflow-wrap: anywhere;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.icon{
+  display: flex;
+  height: 100%;
+  width: 10%;
+  margin: 3% 0% 0% 2%;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: space-around;
 }
