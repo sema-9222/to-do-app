@@ -1,12 +1,11 @@
 import * as Icon from "react-bootstrap-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [list, setList] = useState([]);
   const [newTodo, setNewTodo] = useState("");
   const [todoEdit, setTodoEdit] = useState("");
-  const [isTrue, setIsTrue] = useState(false);
   const [checked, setChecked] = useState([]);
 
   function onClick(e) {
@@ -17,19 +16,19 @@ function App() {
     setNewTodo("");
   }
 
-  const Completed = (id) => {
+  useEffect(() => {
+    setChecked(list.filter((item) => item.isCompleted === true));
+  }, [list]);
+
+  const completed = (id) => {
     setList((prevList) =>
       prevList.map((item) =>
         item.id === id ? { ...item, isCompleted: !item.isCompleted } : item
       )
     );
-    setIsTrue(true);
-    if (isTrue) {
-      setChecked(list.filter((item) => item.isCompleted === true));
-    }
   };
 
-  const Edit = (id, oldtodo) => {
+  const edit = (id, oldtodo) => {
     setList((prevList) =>
       prevList.map((item) =>
         item.id === id ? { ...item, isEdited: !item.isEdited } : item
@@ -39,7 +38,7 @@ function App() {
     setTodoEdit(oldtodo);
   };
 
-  const Save = (id) => {
+  const save = (id) => {
     setList((prevList) =>
       prevList.map((item) =>
         item.id === id
@@ -49,7 +48,7 @@ function App() {
     );
   };
 
-  const Delete = (id) => {
+  const remove = (id) => {
     setList((prevList) => prevList.filter((item) => item.id !== id));
   };
 
@@ -60,7 +59,9 @@ function App() {
   const day = `${current.getDate()}`;
   const year = `${current.getFullYear()}`;
 
-  console.log(list);
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
 
   return (
     <div className="App">
@@ -111,7 +112,7 @@ function App() {
             {list.map((item) => (
               <div className="todos" key={item.id}>
                 <input
-                  onChange={() => Completed(item.id)}
+                  onChange={() => completed(item.id)}
                   value={item.isCompleted}
                   className="checkbox"
                   type="checkbox"
@@ -139,17 +140,17 @@ function App() {
                   {item.isEdited ? (
                     <Icon.CheckSquareFill
                       cursor="pointer"
-                      onClick={() => Save(item.id)}
+                      onClick={() => save(item.id)}
                     />
                   ) : (
                     <Icon.PencilSquare
                       cursor="pointer"
-                      onClick={() => Edit(item.id, item.name)}
+                      onClick={() => edit(item.id, item.name)}
                     />
                   )}
                   <Icon.TrashFill
                     cursor="pointer"
-                    onClick={() => Delete(item.id)}
+                    onClick={() => remove(item.id)}
                   />
                 </div>
               </div>
