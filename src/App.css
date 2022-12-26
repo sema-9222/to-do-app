@@ -62,7 +62,7 @@
 }
 
 .todos {
-  margin: 4% 2% 2% 2%;
+  margin: 2% 2% 0% 2%;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
   border: 2px solid rgba(255, 255, 255, 0.13);
@@ -92,7 +92,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 10px;
+  margin: 10px 10px 30px 10px;
 }
 
 .inputT {

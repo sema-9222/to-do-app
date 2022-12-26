@@ -52,6 +52,12 @@ function App() {
     setList((prevList) => prevList.filter((item) => item.id !== id));
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
+
   const done = checked.length;
   const waiting = list.length - checked.length;
   const current = new Date();
@@ -75,6 +81,7 @@ function App() {
             placeholder="What to do?"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
 
           <button className="btn-1" onClick={onClick}>
