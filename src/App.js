@@ -58,6 +58,12 @@ function App() {
     }
   };
 
+  const handleChangeKey = (e, itemId) => {
+    if (e.key === "Enter") {
+      save(itemId);
+    }
+  };
+
   const done = checked.length;
   const waiting = list.length - checked.length;
   const current = new Date();
@@ -135,6 +141,7 @@ function App() {
                       alignContent: "center",
                     }}
                     onChange={(e) => setTodoEdit(e.target.value)}
+                    onKeyDown={(e) => handleChangeKey(e, item.id)}
                   />
                 ) : (
                   <span
